@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Address Book</string>
+    <string name="action_settings">Settings</string>
+    <string name="username_field">Enter Username</string>
+    <string name="password_field">Enter Password</string>
+    <string name="login_prompt">Login</string>
+    <string name="contact_nameField">Name</string>
+    <string name="contact_phoneField">Phone Number</string>
+    <string name="contact_saveField">Save</string>
+    <string name="contact_deleteField">Delete</string>
+</resources>
