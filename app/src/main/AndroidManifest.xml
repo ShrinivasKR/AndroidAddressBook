@@ -18,7 +18,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".NewContact"></activity>
+        <activity android:name=".NewContact">
+            <intent-filter>
+                <action android:name="com.example.shrinivasramanath.myfirstapp.NewContact" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".EditContact">
+            <intent-filter>
+                <action android:name="com.example.shrinivasramanath.myfirstapp.EditContact" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
