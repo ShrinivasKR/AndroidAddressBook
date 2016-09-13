@@ -3,18 +3,15 @@ package com.example.shrinivasramanath.myfirstapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     ListView contactList;
@@ -26,16 +23,24 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         EditText searchField = (EditText) findViewById(R.id.searchField);
-//        EditText passwordField = (EditText) findViewById(R.id.password);
 
-//        Button loginButton = (Button)this.findViewById(R.id.login);
-//        loginButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                finish();
-//            }
-//        });
 
+        populateContactList();
+        newContactFabListener();
+    }
+
+    public void newContactFabListener() {
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent("com.example.shrinivasramanath.myfirstapp.NewContact");
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void populateContactList() {
         // Get ListView object from xml
         contactList = (ListView) findViewById(R.id.contactList);
 
@@ -71,21 +76,12 @@ public class MainActivity extends AppCompatActivity {
                 String  itemValue    = (String) contactList.getItemAtPosition(position);
 
                 // Show Alert
-                Toast.makeText(getApplicationContext(),
-                        "Position :"+itemPosition+"  ListItem : " +itemValue , Toast.LENGTH_LONG)
-                        .show();
-            }
-        });
+//                Toast.makeText(getApplicationContext(),
+//                        "Position :"+itemPosition+"  ListItem : " +itemValue , Toast.LENGTH_LONG)
+//                        .show();
 
-        newContactFabListener();
-    }
-
-    public void newContactFabListener() {
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent("com.example.shrinivasramanath.myfirstapp.NewContact");
+                Intent intent = new Intent("com.example.shrinivasramanath.myfirstapp.EditContact");
+                intent.putExtra("name", itemValue);
                 startActivity(intent);
             }
         });

@@ -22,7 +22,7 @@
         android:inputType="textPersonName"
         android:text="Name"
         android:ems="10"
-        android:id="@+id/editText3"
+        android:id="@+id/editNameField"
         android:layout_below="@+id/imageButton2"
         android:layout_centerHorizontal="true" />
 
@@ -32,9 +32,9 @@
         android:inputType="phone"
         android:ems="10"
         android:id="@+id/editText4"
-        android:layout_below="@+id/editText3"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3" />
+        android:layout_below="@+id/editNameField"
+        android:layout_alignLeft="@+id/editNameField"
+        android:layout_alignStart="@+id/editNameField" />
 
     <ImageButton
         android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contact_saveField"
-        android:id="@+id/button2"
+        android:id="@+id/saveEditedContactButton"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -67,10 +67,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/contact_deleteField"
-        android:id="@+id/button3"
-        android:layout_alignBottom="@+id/button2"
+        android:id="@+id/deleteEditedContactButton"
+        android:layout_alignBottom="@+id/saveEditedContactButton"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_toEndOf="@+id/button2"
-        android:layout_toRightOf="@+id/button2" />
+        android:layout_toEndOf="@+id/saveEditedContactButton"
+        android:layout_toRightOf="@+id/saveEditedContactButton" />
 </RelativeLayout>
